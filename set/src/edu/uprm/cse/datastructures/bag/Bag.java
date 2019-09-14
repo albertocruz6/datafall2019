@@ -1,5 +1,7 @@
 package edu.uprm.cse.datastructures.bag;
 
+import java.util.List;
+
 public interface Bag<E> {
     public int size();
     
@@ -18,4 +20,6 @@ public interface Bag<E> {
     public void clear();
     
     public E[] toArray();
+    
+    public List<Integer> bagAnalizer(Bag<E> B);
 }

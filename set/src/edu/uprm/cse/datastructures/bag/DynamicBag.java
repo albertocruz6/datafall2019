@@ -1,5 +1,8 @@
 package edu.uprm.cse.datastructures.bag;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DynamicBag<E> implements Bag<E>{
 
 	private E[] elements;
@@ -105,5 +108,24 @@ public class DynamicBag<E> implements Bag<E>{
 		}
 		
 		return result;
+	}
+	
+	public List<Integer> bagAnalizer(Bag<E> B){
+		List<Integer> count = new ArrayList<Integer>();
+		E[] temp = B.toArray();
+		for (int i = 0; i < temp.length; i++) {
+			if(this.isMember(temp[i])) {
+				System.out.println(temp[i] + " has " + this.count(temp[i]));
+				count.add(this.count(temp[i]));
+			}
+			else {
+				System.out.println(temp[i] + " has " + this.count(temp[i]));
+				count.add(0);
+			}
+		}
+		for (int i = 0; i < count.size(); i++) {
+			System.out.println(count.get(i));
+		}
+		return count;
 	}
 }
